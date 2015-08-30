@@ -9,8 +9,9 @@ namespace OneDriveRestAPI
 {
     public class RequestGenerator : IRequestGenerator
     {
-        private const string OAuthUrlBase = @"https://login.live.com";
-        private const string ContentUrlBase = @"https://apis.live.net/v5.0/";
+        private  const string OAuthUrlBase = @"https://login.live.com";
+        private  const string ContentUrlBase = @"https://apis.live.net/v5.0/";
+        internal const string EndUrl = @"https://login.live.com/oauth20_desktop.srf";
 
         private const string OAuthResource = "oauth20_{verb}.srf";
         private const string AuthorizeVerb = "authorize";

@@ -1,0 +1,12 @@
+﻿<ContentDialog
+    x:Class="OneDriveRestAPI.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title=""
+    PrimaryButtonText=""
+    SecondaryButtonText="">
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <WebView Width="320" Height="500" x:Name="Browser" NavigationCompleted="Browser_OnNavigationCompleted"/>
+    </StackPanel>
+</ContentDialog>

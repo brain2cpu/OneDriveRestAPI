@@ -67,6 +67,18 @@ namespace OneDriveRestAPI
             return token;
         }
 
+        public async Task<UserToken> LoginAsync(IEnumerable<Scope> scopes)
+        {
+            string authCode;
+            using(var browser = new Login())
+            {
+                await browser.Navigate(GetAuthorizationRequestUrl(scopes));
+                authCode = browser.Code;
+            }
+
+            return await GetAccessTokenAsync(authCode);
+        }
+
         public async Task<UserToken> RefreshAccessTokenAsync()
         {
             var refreshAccessToken = RequestGenerator.RefreshAccessToken(_options.ClientId, _options.ClientSecret, _options.CallbackUrl, UserRefreshToken);

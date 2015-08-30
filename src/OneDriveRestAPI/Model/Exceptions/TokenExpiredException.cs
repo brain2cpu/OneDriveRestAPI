@@ -16,9 +16,5 @@ namespace OneDriveRestAPI.Model.Exceptions
         public TokenExpiredException(string message, Exception innerException) : base(message, innerException)
         {
         }
-
-        protected TokenExpiredException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
     }
 }
