@@ -1,6 +1,6 @@
 using System.Collections.Specialized;
 using System.Linq;
-using System.Web;
+using System.Net;
 
 namespace OneDriveRestAPI.Util
 {
@@ -10,7 +10,7 @@ namespace OneDriveRestAPI.Util
         {
             var array = (from key in nvc.AllKeys
                 from value in nvc.GetValues(key)
-                select string.Format("{0}={1}", HttpUtility.UrlEncode(key), HttpUtility.UrlEncode(value)))
+                select string.Format("{0}={1}", WebUtility.UrlEncode(key), WebUtility.UrlEncode(value)))
                 .ToArray();
             return (includePrefix ? "?" : "") + string.Join("&", array);
         }

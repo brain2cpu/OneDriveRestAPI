@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace OneDriveRestAPI.Model.Exceptions
 {
@@ -24,11 +23,6 @@ namespace OneDriveRestAPI.Model.Exceptions
             : base(message, innerException)
         {
             Code = code;
-        }
-
-        protected ServiceErrorException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
         }
 
         public string Code { get; set; }
